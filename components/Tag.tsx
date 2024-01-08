@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { slug } from 'github-slugger'
 interface Props {
   text: string
-  text_only: boolean
+  text_only?: boolean
 }
 
 const Tag = ({ text, text_only }: Props) => {

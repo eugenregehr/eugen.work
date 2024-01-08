@@ -8,7 +8,6 @@ const siteMetadata = {
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://www.eugen.work',
-  siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
   email: 'mail@eugen.work',
   github: 'https://github.com/eugenregehr',

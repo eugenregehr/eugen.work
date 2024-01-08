@@ -30,7 +30,7 @@ const Card = ({ title, description, imgSrc, href, tags }) => (
       ))}
     <div className="p-6">
       {tags && tags.map((tag) => <Tag text={tag} key={tag} text_only />)}
-      <h2 className="mb-3 text-2xl font-bold leading-7 tracking-tight">
+      <h2 className="mb-3 text-2xl font-bold leading-7 tracking-tight text-black  hover:text-opacity-80 dark:text-white dark:hover:text-opacity-80">
         {href ? (
           <Link href={href} aria-label={`Link to ${title}`}>
             {title}

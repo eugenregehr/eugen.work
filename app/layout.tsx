@@ -10,6 +10,7 @@ import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
+import CookieNotice from '@/components/CookieNotice'
 
 const gudea = Gudea({
   variable: '--font-gudea',
@@ -85,6 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Footer />
             </div>
           </SectionContainer>
+          <CookieNotice />
         </ThemeProviders>
       </body>
     </html>

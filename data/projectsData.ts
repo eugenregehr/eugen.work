@@ -79,8 +79,8 @@ const projectsData: Project[] = [
     tags: ['Wordpress', 'ACF'],
   },
   {
-    title: 'Woman energize Woman',
-    description: `The "Woman Energize Woman" project focused on a campaign and conference highlighting women's significant role in the global energy transition. The client opted to use Elementor, a user-friendly tool for WordPress, to enable quick and efficient theme development for the website.`,
+    title: 'Women energize Women',
+    description: `The "Women Energize Women" project focused on a campaign and conference highlighting women's significant role in the global energy transition. The client opted to use Elementor, a user-friendly tool for WordPress, to enable quick and efficient theme development for the website.`,
     imgSrc: '/static/images/projects/wew/wew.jpg',
     href: 'https://www.womenenergize.org/',
     tags: ['Wordpress', 'Elementor'],

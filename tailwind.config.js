@@ -25,8 +25,8 @@ module.exports = {
         sans: ['var(--font-gudea)', ...fontFamily.sans],
       },
       colors: {
-        primary: colors.red,
-        secondary: colors.teal,
+        primary: colors.pink,
+        secondary: colors.sky,
         gray: colors.gray,
       },
       typography: ({ theme }) => ({

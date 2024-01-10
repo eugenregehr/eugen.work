@@ -2,7 +2,7 @@ import Image from './Image'
 import Link from './Link'
 import Tag from './Tag'
 
-const Card = ({ title, description, imgSrc, href, tags }) => (
+const Card = ({ title, description, imgSrc, placeholderImgSrc, href, tags }) => (
   <div
     className={`${
       imgSrc && 'h-full'
@@ -17,6 +17,8 @@ const Card = ({ title, description, imgSrc, href, tags }) => (
             className="object-cover object-top md:h-40 lg:h-56"
             width={1600}
             height={750}
+            placeholder="blur"
+            blurDataURL={placeholderImgSrc}
           />
         </Link>
       ) : (
@@ -26,6 +28,8 @@ const Card = ({ title, description, imgSrc, href, tags }) => (
           className="object-cover object-top md:h-40 lg:h-56"
           width={1600}
           height={750}
+          placeholder="blur"
+          blurDataURL={placeholderImgSrc}
         />
       ))}
     <div className="p-6">

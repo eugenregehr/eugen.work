@@ -28,6 +28,7 @@ export default function Projects() {
                 title={d.title}
                 description={d.description}
                 imgSrc={d.imgSrc}
+                placeholderImgSrc={d.placeholderImgSrc}
                 href={d.href}
                 tags={d.tags}
               />

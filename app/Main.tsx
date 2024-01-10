@@ -5,6 +5,8 @@ import { genPageMetadata } from 'app/seo'
 export const metadata = genPageMetadata({ title: 'Projects' })
 
 export default function Projects() {
+  const imagePath = '/static/images/projects/'
+
   return (
     <>
       <div>
@@ -27,8 +29,7 @@ export default function Projects() {
                 key={d.title}
                 title={d.title}
                 description={d.description}
-                imgSrc={d.imgSrc}
-                placeholderImgSrc={d.placeholderImgSrc}
+                imgSrc={imagePath + d.imgSrc}
                 href={d.href}
                 tags={d.tags}
               />

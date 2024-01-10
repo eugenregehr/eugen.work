@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import type { Authors } from 'contentlayer/generated'
 import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
+import { blurDataURL } from '@/data/blurredImages'
 
 interface Props {
   children: ReactNode
@@ -30,7 +31,7 @@ export default function AuthorLayout({ children, content }: Props) {
                 height={192}
                 className="h-48 w-48 rounded-full"
                 placeholder="blur"
-                blurDataURL={avatarPlaceholder}
+                blurDataURL={blurDataURL[avatar]}
               />
             )}
             <span className="pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight">{name}</span>

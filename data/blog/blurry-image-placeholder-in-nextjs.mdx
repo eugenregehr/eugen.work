@@ -1,0 +1,85 @@
+---
+title: 'Creating an Alternative Approach for Blurry Placeholder Images in Next.js'
+date: '2024-01-10'
+tags: ['Next.js']
+draft: false
+summary: Explore how to enhance Next.js projects with custom blurry placeholders using a simple, innovative script. Ideal for modern web development
+---
+
+As I delve deeper into learning Next.js, I embarked on a quest to find a contemporary structure for building my website. My discovery led me to an exceptional template created by [Timothy Lin](https://github.com/timlrx), available on [GitHub](https://github.com/timlrx/tailwind-nextjs-starter-blog). This simple blog template is not only user-friendly but also integrates content logic using markdown files through contentlayer, a feature that greatly appealed to me. Among its other standout features are comments, a search bar, and the seamless integration of light and dark themes using Tailwind, along with tags and more.
+
+
+However, I noticed one missing element: blurry placeholders for images. Next.js allows the passing of base64-encoded images, and this is done automatically when you statically import an image, as shown in the [Demo](https://image-legacy-component.nextjs.gallery/placeholder):
+
+```javascript
+import Image from 'next/legacy/image'
+import mountains from '../public/mountains.jpg'
+
+const PlaceholderBlur = () => (
+  <div>
+    <h1>Image Component With Placeholder Blur</h1>
+    <Image
+      alt="Mountains"
+      src={mountains}
+      placeholder="blur"
+      width={700}
+      height={475}
+    />
+  </div>
+)
+
+export default PlaceholderBlur
+```
+
+For dynamic images, however, a different approach is required. I explored several methods, including [plaiceholder](https://plaiceholder.co/), which utilizes [sharp](https://sharp.pixelplumbing.com/) and is ESM only. Unfortunately, combining ESM mode with plaiceholder and app routing resulted in numerous errors and headaches.
+
+Therefore, I decided to forge my own path. I created a script using sharp to generate base64 strings, which writes a JavaScript file listing base64 strings for each image. The script looks something like this:
+
+```javascript 
+async function imageToBase64(filePath) {
+  return sharp(filePath)
+    .resize({ height: 20 })
+    .blur()
+    .toBuffer()
+    .then((data) => `data:image/jpeg;base64,${data.toString('base64')}`)
+}
+```
+
+You can see the full script [here](https://github.com/eugenregehr/eugen.work/blob/main/scripts/generateBase64.js). Running `node scripts/generateBase64.mjs` generates a structure as follows:
+
+```javascript
+export const blurDataURL = {
+  "/static/images/projects/lanserhof.jpg": "data:image/jpeg;base64...",
+  "/static/images/projects/lenz-gomez.jpg": "data:image/jpeg;base64...",
+  "/static/images/projects/wew.jpg": "data:image/jpeg;base64..."
+};
+```
+
+This can then be utilized in your component:
+
+```javascript
+import Image from 'next/legacy/image'
+import { blurDataURL } from '@/data/blurredImages'
+
+const Card = ({ imgSrc }) => (
+  <div>
+    <h1>Image Component With Placeholder Blur</h1>
+    <Image
+      alt="Mountains"
+      src={imgSrc}
+      placeholder="blur"
+      blurDataURL={blurDataURL[imgSrc]}
+      width={700}
+      height={475}
+    />
+  </div>
+)
+
+export default Card
+```
+
+It's important to note that this method may not suit every project, particularly those with numerous images, as it could result in a large JavaScript file and potential performance issues.
+
+If you have any other ideas or thoughts on this topic, please feel free to share them in the comments below.
+
+Cheers!

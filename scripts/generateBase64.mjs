@@ -1,19 +1,15 @@
-// generateBase64.js
+import sharp from 'sharp'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+import path, { dirname as pathDirname } from 'path'
 
-const sharp = require('sharp')
-const fs = require('fs')
-const path = require('path')
-
-// Verzeichnis, in dem sich Ihre Bilder befinden
+const __dirname = pathDirname(fileURLToPath(import.meta.url))
 const imagesDir = path.join(__dirname, '../public/static/images/')
-
-// Ziel-Datei für die generierten Base64-Strings
 const outputFilePath = path.join(__dirname, '../data/blurredImages.js')
 
-// Funktion, um ein Bild in einen Base64-String zu konvertieren
 async function imageToBase64(filePath) {
   return sharp(filePath)
-    .resize({ height: 20 }) // Kleine Größe für den Platzhalter
+    .resize({ height: 20 })
     .blur()
     .toBuffer()
     .then((data) => `data:image/jpeg;base64,${data.toString('base64')}`)
@@ -26,14 +22,12 @@ async function processDirectory(directory) {
   for (const file of files) {
     const fullPath = path.join(directory, file.name)
     if (file.isDirectory()) {
-      // Rekursiver Aufruf für Unterverzeichnisse
       const nestedStrings = await processDirectory(fullPath)
       Object.assign(base64Strings, nestedStrings)
     } else if (/\.(jpg|jpeg|png|webp)$/i.test(file.name)) {
-      // Verarbeiten, wenn es sich um ein Bild handelt
       try {
         const base64 = await imageToBase64(fullPath)
-        // Berechnen des relativen Pfades ab '/static/images/'
+        // edit to '/static/images/'
         const relativePath = fullPath.replace(path.join(__dirname, '../public'), '')
         base64Strings[relativePath] = base64
       } catch (error) {
@@ -46,14 +40,15 @@ async function processDirectory(directory) {
 }
 
 processDirectory(imagesDir).then((base64Strings) => {
+  console.log('Generate Base64 Preview Images...')
   fs.writeFile(
     outputFilePath,
     `export const blurDataURL = ${JSON.stringify(base64Strings, null, 2)};`,
     (err) => {
       if (err) {
-        console.error('Fehler beim Schreiben der Datei:', err)
+        console.error('Error writing file:', err)
       } else {
-        console.log('Base64-Strings erfolgreich generiert und gespeichert in', outputFilePath)
+        console.log('Base64-Strings successful generated', outputFilePath)
       }
     }
   )

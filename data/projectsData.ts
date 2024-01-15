@@ -70,7 +70,7 @@ const projectsData: Project[] = [
     imgSrc: 'amiea.jpg',
     placeholderImgSrc: 'amiea.jpg',
     href: 'https://amiea.com/de',
-    tags: ['Webflow', 'Animation'],
+    tags: ['Animation'],
   },
   {
     title: 'Wordpress Website for Blacksheep Festival',

@@ -18,6 +18,7 @@ const Tag = ({ text, text_only, projects, active }: Props) => {
     </span>
   ) : (
     <Link
+      scroll={false}
       href={`${fixedSlug}/${slug(text)}`}
       className={`mr-3 ${activeClass} whitespace-nowrap text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400`}
     >

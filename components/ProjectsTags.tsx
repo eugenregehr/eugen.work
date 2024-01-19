@@ -1,3 +1,4 @@
+import { MotionDiv } from './MotionDiv'
 import Tag from './Tag'
 import { slug } from 'github-slugger'
 

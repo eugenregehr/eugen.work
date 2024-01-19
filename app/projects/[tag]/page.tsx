@@ -6,6 +6,7 @@ import ProjectsTags from '@/components/ProjectsTags'
 import { genPageMetadata } from 'app/seo'
 import siteMetadata from '@/data/siteMetadata'
 import { Metadata } from 'next'
+import { MotionDiv } from '@/components/MotionDiv'
 
 export async function generateMetadata({ params }: { params: { tag: string } }): Promise<Metadata> {
   const tag = decodeURI(params.tag)
@@ -50,7 +51,12 @@ export default async function Projects({ params }) {
   return (
     <ProjectsLayout projectTitle={'tag: ' + title} resetFilter>
       <ProjectsTags tags={Array.from(allTags)} activeTag={tag} />
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <MotionDiv
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="grid grid-cols-1 gap-6 md:grid-cols-2"
+      >
         {filteredPosts.map((d) => (
           <Card
             key={d.title}
@@ -61,7 +67,7 @@ export default async function Projects({ params }) {
             tags={d.tags}
           />
         ))}
-      </div>
+      </MotionDiv>
     </ProjectsLayout>
   )
 }

@@ -3,6 +3,7 @@ import headerNavLinks from '@/data/headerNavLinks'
 import Link from './Link'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
+import { MotionDiv } from '@/components/MotionDiv'
 
 const Header = () => {
   return (

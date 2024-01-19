@@ -1,10 +1,15 @@
+import { MotionDiv } from './MotionDiv'
 import StartHeader from './StartHeader'
 import Link from 'next/link'
 
 export default function ProjectsLayout({ projectTitle, resetFilter = false, children }) {
   return (
     <>
-      <div>
+      <MotionDiv
+        initial={{ opacity: !resetFilter ? 0 : 1 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <StartHeader />
         <div className="container py-12">
           <div className="flex items-center ">
@@ -22,7 +27,7 @@ export default function ProjectsLayout({ projectTitle, resetFilter = false, chil
 
           {children}
         </div>
-      </div>
+      </MotionDiv>
     </>
   )
 }

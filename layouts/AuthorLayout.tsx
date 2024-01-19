@@ -3,6 +3,7 @@ import type { Authors } from 'contentlayer/generated'
 import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
 import { blurDataURL } from '@/data/blurredImages'
+import { MotionDiv } from '@/components/MotionDiv'
 
 interface Props {
   children: ReactNode
@@ -15,7 +16,12 @@ export default function AuthorLayout({ children, content }: Props) {
 
   return (
     <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <MotionDiv
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="divide-y divide-gray-200 dark:divide-gray-700"
+      >
         <div className="space-y-2 pb-8 pt-6 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             About
@@ -47,7 +53,7 @@ export default function AuthorLayout({ children, content }: Props) {
             {children}
           </div>
         </div>
-      </div>
+      </MotionDiv>
     </>
   )
 }

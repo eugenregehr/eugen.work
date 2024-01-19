@@ -13,6 +13,7 @@ import PostBanner from '@/layouts/PostBanner'
 import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
 import { notFound } from 'next/navigation'
+import { MotionDiv } from '@/components/MotionDiv'
 
 const defaultLayout = 'PostLayout'
 const layouts = {
@@ -114,9 +115,11 @@ export default async function Page({ params }: { params: { slug: string[] } }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Layout content={mainContent} authorDetails={authorDetails} next={next} prev={prev}>
-        <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
-      </Layout>
+      <MotionDiv initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+        <Layout content={mainContent} authorDetails={authorDetails} next={next} prev={prev}>
+          <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
+        </Layout>
+      </MotionDiv>
     </>
   )
 }

@@ -13,7 +13,7 @@ const Tag = ({ text, text_only, projects, active }: Props) => {
   const activeClass = active ? 'underline' : ''
 
   return text_only ? (
-    <span className="mr-3 text-sm font-medium uppercase text-primary-500 ">
+    <span className="mr-3 text-lg font-medium uppercase text-primary-500 ">
       {text.split(' ').join('-')}
     </span>
   ) : (

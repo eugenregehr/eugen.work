@@ -1,0 +1,90 @@
+---
+title: '3D Flip Cards Web App Using R3F'
+date: '2024-01-24'
+tags: ['WebGL']
+draft: false
+summary: Developed a unique 3D Flip Cards Web App with R3F. Features custom scrolling, card flip animations, and responsive design. Code snippets included.
+---
+
+Welcome to another WebGL project.
+
+This time, I've created a 3D Flip Cards Web App using the R3F library. 
+You often see card designs on websites, so I decided to try something unique.
+
+My goal was to create a group of cards with a custom smooth scrolling animation. When you click on a card, it should flip 180 degrees, and the camera should zoom in on the selected card.
+
+One challenge was calculating the position of each card without using DOM elements and I just wanted to share my solution to this problem. First we have to calculate our layout and return all values we need:
+
+```typescript
+const calculateLayout = (numCols: number) => {
+  const gapX = 0.3
+  const gapY = 0.3
+  const cardWidth = 3.1
+  const cardHeight = 1.8
+  const totalWidth = numCols * cardWidth + (numCols - 1) * gapX
+  const xOffset = totalWidth / 2 - cardWidth / 2
+  const numRows = Math.ceil(10 / numCols)
+
+  return { cardWidth, cardHeight, xOffset, numRows, gapX, gapY }
+}
+```
+
+To optimize performance, we store the layout values for a 3-column layout and use `useMemo` to prevent recalculating them every time the component re-renders.
+
+```typescript
+const colsNumber = 3
+const layout = useMemo(() => calculateLayout(colsNumber), [colsNumber])
+```
+
+Next, we use these layout values to figure out where to place each card:
+
+```typescript
+const cardPositions = useMemo(() => {
+    return data.map((_, index) => {
+      const col = index % colsNumber
+      const row = Math.floor(index / colsNumber)
+      const x = col * (layout.cardWidth + layout.gapX) - layout.xOffset
+      const y = -(row * (layout.cardHeight + layout.gapY)) + cardsYOffset
+      return { x, y }
+    })
+  }, [colsNumber, layout, cardsYOffset])
+```
+
+Now it's time to create our cards using the data array for each one.
+
+```typescript
+const data = [
+  {
+    title: 'Card Title 1',
+  },
+  // ... 
+]
+
+export default function CreateCards() {
+// ... cardPostions
+
+return data.map((data, index) => {
+    const position = cardPositions[index]
+    return (
+      <Card
+        key={index}
+        position={[position.x, position.y, 0]}
+        data={data}
+      />
+    )
+}
+```
+
+Now, let's construct the card component and populate it with our data. If everything is functioning as expected, you can fine-tune your layout by modifying the values in the calculateLayout function. This is just a brief overview of my project. I've also added features like:
+
+- Custom scrolling with an easing effect.
+- Rotation and camera zoom for the active card.
+- Small effects like card rotation on hover and spotlight.
+- Breakpoints for mobile, tablet, and desktop.
+- Global state management with Redux for setting initial values at each breakpoint.
+
+You can check out the repository [here](https://github.com/eugenregehr/r3f-3d-cards/tree/main) and the preview [here](r3f-3d-cards.vercel.app)
+
+If you have any suggestions or ideas to expand this project, feel free to share them in the comments.
+
+Cheers.

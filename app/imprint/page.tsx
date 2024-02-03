@@ -15,7 +15,11 @@ export default function Imprint() {
           Ahtri tn 12,10151 Tallinn
         </p>
 
-        <p>Managing Director: Eugen Regehr</p>
+        <p>
+          Managing Director: Eugen Regehr
+          <br />
+          VAT: EE102702468
+        </p>
 
         <h2>Contact</h2>
         <p>E-Mail: mail@eugen.work</p>

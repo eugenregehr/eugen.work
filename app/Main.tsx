@@ -3,7 +3,6 @@ import Card from '@/components/Card'
 import { genPageMetadata } from 'app/seo'
 import ProjectsLayout from '@/components/ProjectsLayout'
 import ProjectsTags from '@/components/ProjectsTags'
-import { MotionDiv } from '@/components/MotionDiv'
 
 export const metadata = genPageMetadata({ title: 'Projects' })
 

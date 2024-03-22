@@ -19,7 +19,9 @@ export default function StartHeader() {
             </h1>
           </div>
           <div className="w-80">
-            <ClientSideLottie />
+            <div className="min-h-80">
+              <ClientSideLottie />
+            </div>
           </div>
         </div>
       </div>

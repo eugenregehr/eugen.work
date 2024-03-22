@@ -17,7 +17,7 @@ export default function Projects() {
   })
 
   return (
-    <ProjectsLayout projectTitle="Some of my work">
+    <ProjectsLayout projectTitle="selected works">
       <ProjectsTags tags={Array.from(allTags)} />
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

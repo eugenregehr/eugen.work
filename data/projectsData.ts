@@ -9,8 +9,16 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'Kirby CMS project for OneStopBox, a subcompany of DHL',
-    description: `The OneStopBox is a groundbreaking, provider-neutral automated parcel locker used by DHL and others, offering 24/7 click-and-collect convenience for seamless retail pickups.`,
+    title: 'CMS Page for Techstax UG, a webdevelopment agency',
+    description: `Tech Stax is a web development agency focused on delivering top-notch results by seamlessly integrating design and development, with a tailored approach to meet your specific needs.`,
+    imgSrc: 'techstax.jpg',
+    placeholderImgSrc: 'techstax.jpg',
+    href: 'https://techstax.de/',
+    tags: ['Kirby CMS'],
+  },
+  {
+    title: 'CMS Project for a subcompany of DHL',
+    description: `The OneStopBox is a groundbreaking, provider-neutral automated parcel locker used by DHL and others, offering 24/7 click-and-collect convenience for seamless retail pickups. On behalf of Techstax UG and ReachNext Agency`,
     imgSrc: 'onestopbox.jpg',
     placeholderImgSrc: 'onestopbox.jpg',
     href: 'https://onestopbox.de/',

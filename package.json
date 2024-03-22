@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "start": "next dev",
-    "dev": "cross-env next dev",
-    "build": "cross-env next build && cross-env NODE_OPTIONS='--experimental-json-modules' node ./scripts/postbuild.mjs",
+    "dev": "next dev",
+    "build": "next build && cross-env NODE_OPTIONS='--experimental-json-modules' node ./scripts/postbuild.mjs",
     "previewImages": "node ./scripts/generateBase64.mjs",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.5.3",
     "@next/bundle-analyzer": "14.0.3",
     "@tailwindcss/forms": "^0.5.4",
     "@tailwindcss/typography": "^0.5.9",

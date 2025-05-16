@@ -125,3 +125,15 @@
 .content-container {
   @apply max-w-screen-md mx-auto border-l border-r border-border px-10;
 }
+
+h1 {
+  @apply text-5xl font-bold mb-4;
+}
+
+h2 {
+  @apply text-2xl font-bold mb-2;
+}
+
+p {
+  @apply text-foreground/70;
+}

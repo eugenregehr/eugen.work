@@ -9,6 +9,7 @@ import {
 
 <template>
   <div>
+    <h2 class="h2">FAQ</h2>
     <Accordion type="single" collapsible>
       <AccordionItem value="item-1">
         <AccordionTrigger>Is it accessible?</AccordionTrigger>

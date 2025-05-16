@@ -7,14 +7,14 @@ import { Mail, Github } from "lucide-vue-next";
     <NuxtImg
       src="/img/avatar.jpg"
       alt="Eugen Regehr "
-      class="rounded-full w-20 h-20 mx-auto" />
-    <h1 class="text-5xl font-bold mt-4">
+      class="rounded-full w-20 h-20 mx-auto mb-4" />
+    <h1 class="h1">
       Hi, I'm Eugen, <br />
       Full Stack Developer & Designer
     </h1>
-    <p class="mt-4 text-foreground/70">
+    <p>
       I realise professional web projects - from web design and web development,
-      including CMS, to complex tools.
+      including CMS, to complex animations and tools.
     </p>
 
     <div class="mt-4 flex items-center justify-center gap-2">

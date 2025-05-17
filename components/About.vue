@@ -5,8 +5,8 @@
     <div>
       <h2 class="h2">About Me</h2>
       <p>
-        I'm a full stack developer and designer with a passion for creating
-        beautiful and functional web applications.
+        Als Web-Entwickler und Designer liebe ich es, moderne und
+        benutzerfreundliche Web-Apps, Tools und Designs zu entwickeln.
       </p>
     </div>
     <div>

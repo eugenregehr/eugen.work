@@ -10,7 +10,7 @@ import { Mail, Github } from "lucide-vue-next";
       class="rounded-full w-20 h-20 mx-auto mb-4" />
     <h1 class="h1">
       Hi, I'm Eugen, <br />
-      Full Stack Developer & Designer
+      Full Stack Developer & Interactive Designer
     </h1>
     <p>
       I realise professional web projects - from web design and web development,

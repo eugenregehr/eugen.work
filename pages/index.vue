@@ -20,7 +20,11 @@ const toggleTheme = () => {
       <Moon v-else />
     </Button>
     <Header />
-    <About class="mt-20" />
-    <Faq />
+
+    <div class="mt-20 flex flex-col gap-10">
+      <About />
+      <Projects />
+      <Faq />
+    </div>
   </NuxtLayout>
 </template>

@@ -5,22 +5,31 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+
+const faq = [
+  {
+    question: "How much do you charge?",
+    answer:
+      "It depends on the complexity of the project. I offer a free consultation to discuss your needs and provide a quote. Usually my projects start at 2000€.",
+  },
+  {
+    question: "What is included in the price?",
+    answer: "",
+  },
+];
 </script>
 
 <template>
   <div>
     <h2 class="h2">FAQ</h2>
     <Accordion type="single" collapsible>
-      <AccordionItem value="item-1">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+      <AccordionItem
+        v-for="item in faq"
+        :key="item.question"
+        :value="item.question">
+        <AccordionTrigger>{{ item.question }}</AccordionTrigger>
         <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-2">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
+          {{ item.answer }}
         </AccordionContent>
       </AccordionItem>
     </Accordion>

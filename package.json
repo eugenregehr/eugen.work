@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "eugen.work",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,14 +10,12 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/eslint": "1.3.1",
     "@nuxt/fonts": "0.11.4",
     "@nuxt/icon": "1.13.0",
     "@nuxt/image": "1.10.0",
     "@tailwindcss/vite": "^4.1.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "eslint": "^9.0.0",
     "lucide-vue-next": "^0.510.0",
     "nuxt": "^3.17.3",
     "reka-ui": "^2.2.1",

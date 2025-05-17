@@ -5,13 +5,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
 
-  modules: [
-    "@nuxt/eslint",
-    "@nuxt/fonts",
-    "@nuxt/image",
-    "shadcn-nuxt",
-    "@nuxtjs/color-mode",
-  ],
+  modules: ["@nuxt/fonts", "@nuxt/image", "shadcn-nuxt", "@nuxtjs/color-mode"],
 
   colorMode: {
     classSuffix: "",

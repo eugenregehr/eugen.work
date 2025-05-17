@@ -10,25 +10,11 @@
       </p>
     </div>
     <div>
-      <h2 class="h2">My Stack</h2>
-      <div>
-        <h3 class="h3">Frontend</h3>
-        <p>Nuxt / Vue, Tailwind, TypeScript, <br />Shadcn UI, GSAP</p>
-      </div>
-      <div class="grid grid-cols-3 gap-2 mt-2">
-        <div>
-          <h3 class="h3">CMS</h3>
-          <p>Kirby</p>
-        </div>
-        <div>
-          <h3 class="h3">Backend</h3>
-          <p>Laravel</p>
-        </div>
-        <div>
-          <h3 class="h3">Design</h3>
-          <p>Figma</p>
-        </div>
-      </div>
+      <h2 class="h2">Stack</h2>
+      <p>
+        Nuxt / Vue, Tailwind, TypeScript, Shadcn UI, GSAP, Kirby CMS, Laravel,
+        Figma, Webflow, Cursor AI
+      </p>
     </div>
   </div>
 </template>

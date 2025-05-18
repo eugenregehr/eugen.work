@@ -21,7 +21,7 @@ export const projects: Project[] = [
       "Share of Clicks ist ein Analyse-Tool zur Auswertung des Nutzerverhaltens auf Amazon. Es bietet Zugriff auf über 20 Millionen ASIN-Suchbegriff-Kombinationen zur Optimierung der Sichtbarkeit.",
     url: "https://www.shareofclicks.com/",
     image: "/img/projects/share-of-clicks.jpg",
-    tags: ["Strapi", "Nuxt"],
+    tags: ["Strapi", "Nuxt", "Logo", "Webdesign"],
   },
   {
     title: "Condio",

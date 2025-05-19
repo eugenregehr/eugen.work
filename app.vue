@@ -2,6 +2,9 @@
 import { useHead } from "#app";
 
 useHead({
+  htmlAttrs: {
+    lang: "de",
+  },
   title:
     "Webentwicklung & Design – Moderne Websites, Web-Apps, CMS & Animationen",
   meta: [

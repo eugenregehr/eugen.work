@@ -8,6 +8,14 @@ interface Project {
 
 export const projects: Project[] = [
   {
+    title: "system 360",
+    description:
+      "System 360 AG ist ein auf Wirtschafts- und Vermögensschutz spezialisiertes Schweizer Beratungsunternehmen mit Sitz in Luzern, das diskrete Präventions- und Interventionslösungen gegen Wirtschaftskriminalität anbietet.",
+    url: "https://www.system-360.ch/",
+    image: "/img/projects/system-360.jpg",
+    tags: ["Nuxt", "Tailwind", "Animation"],
+  },
+  {
     title: "BGF+",
     description:
       "BGF+ ist ein Architekturbüro aus Wiesbaden mit rund 50 Mitarbeitenden. Es realisiert vielfältige Projekte vom Innenausbau bis zur denkmalgerechten Sanierung im Rhein-Main-Gebiet.",

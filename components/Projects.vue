@@ -21,8 +21,7 @@ import { projects } from "@/content/projects";
         class="flex justify-between items-end gap-4 group">
         <div class="md:shrink-0">
           <h3 class="h3">{{ project.title }}</h3>
-          <p
-            class="w-full md:max-w-sm line-clamp-2 group-hover:!text-foreground/80">
+          <p class="w-full md:max-w-lg group-hover:!text-foreground/80">
             {{ project.description }}
           </p>
         </div>
